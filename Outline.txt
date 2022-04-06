@@ -1,0 +1,61 @@
+C:\Users\New owner\source\repos\cmx Esolang\cmx Esolang
+
+
+Instructions:
+
+chemex << 6 bits
+
+max 64 instructions
+[command (arg1, arg2)]
+
+-nop
+-out (length) // outputs the amount of characters set at the value of the stack pointer
+-add (ptr, amount) // adds amount to ptr and loads into current stack ptr
+-sub (ptr, amount) // subs amount from ptr and loads into current stack ptr
+-mul (ptr, amount) // mult amount with ptr and loads into current stack ptr
+-div (ptr, amount) // divs ptr by amount and loads into current stack ptr
+-got (ptr) // moves stack pointer to ptr
+-mov (from_ptr, to_ptr) // moves a value from from_ptr to to_ptr
+-sin // increases the stack pointer
+-sde // decreases the stack pointer
+-inc // increases the value of the stack ptr by the value of the next instruction
+-dec // decreases the value of the stack ptr by the value of the next instruction
+-ldv // loads the value of the next instruction into the current stack ptr
+-set // sets the value of the stack ptr to the value of the next instruction
+
+-jvs // sets the value of the instruction pointer to the value at the current stack pointer
+-jni // sets the value of the instruction pointer to the value of the next instruction
+-jsz // sets the value of the instruction pointer to the value of the next instruction, if the current stack value is zero
+^^^ for 0.2, jumps/looping
+
+Example:
+
+ldv 13 // Length of "Hello, World!"
+sin
+ldv H
+sin
+ldv e
+sin
+ldv l
+sin
+ldv l
+sin
+ldv o
+sin
+ldv ,
+sin
+ldv 
+sin
+ldv W
+sin
+ldv o
+sin
+ldv r
+sin
+ldv l
+sin
+ldv d
+sin
+ldv !
+set 0
+out
